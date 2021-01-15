@@ -5,7 +5,7 @@
   <title>Factory</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-  <link rel="stylesheet" media="all" href="docco.css" />
+  <link rel="stylesheet" media="all" href="../../../docco.css" />
 </head>
 <body>
   <div id="container">
@@ -16,43 +16,55 @@
           <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
           <a class="small" href="javascript:void(0);">+</a>
           <div id="jump_wrapper">
-          <div id="jump_page">
-            
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
               
-              <a class="source" href="constructor.html">
-                constructor.js
-              </a>
-            
+                
+                <a class="source" href="../constructor/constructor.html">
+                  patterns/design/constructor/constructor.js
+                </a>
               
-              <a class="source" href="facade.html">
-                facade.js
-              </a>
-            
+                
+                <a class="source" href="../facade/facade.html">
+                  patterns/design/facade/facade.js
+                </a>
               
-              <a class="source" href="factory.html">
-                factory.js
-              </a>
-            
+                
+                <a class="source" href="factory.html">
+                  patterns/design/factory/factory.js
+                </a>
               
-              <a class="source" href="iterator.html">
-                iterator.js
-              </a>
-            
+                
+                <a class="source" href="../iterator/iterator.html">
+                  patterns/design/iterator/iterator.js
+                </a>
               
-              <a class="source" href="mediator.html">
-                mediator.js
-              </a>
-            
+                
+                <a class="source" href="../mediator/mediator.html">
+                  patterns/design/mediator/mediator.js
+                </a>
               
-              <a class="source" href="observer.html">
-                observer.js
-              </a>
-            
+                
+                <a class="source" href="../observer/observer.html">
+                  patterns/design/observer/observer.js
+                </a>
               
-              <a class="source" href="singleton.html">
-                singleton.js
-              </a>
-            
+                
+                <a class="source" href="../singleton/singleton.html">
+                  patterns/design/singleton/singleton.js
+                </a>
+              
+                
+                <a class="source" href="../../general/global-object/index.html">
+                  patterns/general/global-object/index.js
+                </a>
+              
+                
+                <a class="source" href="../../general/hoisting/index.html">
+                  patterns/general/hoisting/index.js
+                </a>
+              
+            </div>
           </div>
         </li>
       </ul>
@@ -71,7 +83,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">console</span>.info(<span class="hljs-string">'-----&gt; Factory Pattern'</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">console</span>.info(<span class="hljs-string">&#x27;-----&gt; Factory Pattern&#x27;</span>);</pre></div></div>
             
         </li>
         
@@ -92,13 +104,13 @@
             <div class="content"><div class='highlight'><pre>
 <span class="hljs-keyword">var</span> factory = {};
 
-factory.Shirt = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(opts)</span> </span>{
-    <span class="hljs-keyword">this</span>.color = opts.color || <span class="hljs-string">'white'</span>;
-    <span class="hljs-keyword">this</span>.size = opts.size || <span class="hljs-string">'M'</span>;
+factory.Shirt = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">opts</span>) </span>{
+    <span class="hljs-built_in">this</span>.color = opts.color || <span class="hljs-string">&#x27;white&#x27;</span>;
+    <span class="hljs-built_in">this</span>.size = opts.size || <span class="hljs-string">&#x27;M&#x27;</span>;
 };
-factory.Trousers = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(opts)</span> </span>{
-    <span class="hljs-keyword">this</span>.color = opts.color || <span class="hljs-string">'black'</span>;
-    <span class="hljs-keyword">this</span>.style = opts.style || <span class="hljs-string">'classic'</span>;
+factory.Trousers = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">opts</span>) </span>{
+    <span class="hljs-built_in">this</span>.color = opts.color || <span class="hljs-string">&#x27;black&#x27;</span>;
+    <span class="hljs-built_in">this</span>.style = opts.style || <span class="hljs-string">&#x27;classic&#x27;</span>;
 };</pre></div></div>
             
         </li>
@@ -114,7 +126,7 @@ factory.Trousers = <span class="hljs-function"><span class="hljs-keyword">functi
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>factory.create = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(type, opts)</span> </span>{
+            <div class="content"><div class='highlight'><pre>factory.create = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">type, opts</span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> factory[type](opts);
 };</pre></div></div>
             
@@ -131,7 +143,7 @@ factory.Trousers = <span class="hljs-function"><span class="hljs-keyword">functi
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> shirt = factory.create(<span class="hljs-string">'Shirt'</span>, {color: <span class="hljs-string">'pink'</span>, size: <span class="hljs-string">'XL'</span>});
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> shirt = factory.create(<span class="hljs-string">&#x27;Shirt&#x27;</span>, {<span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;pink&#x27;</span>, <span class="hljs-attr">size</span>: <span class="hljs-string">&#x27;XL&#x27;</span>});
 <span class="hljs-built_in">console</span>.log(shirt <span class="hljs-keyword">instanceof</span> factory.Shirt); <span class="hljs-comment">// true</span></pre></div></div>
             
         </li>
@@ -149,7 +161,7 @@ factory.Trousers = <span class="hljs-function"><span class="hljs-keyword">functi
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
 <span class="hljs-keyword">var</span> n = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-number">1</span>);
-<span class="hljs-keyword">var</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">'s'</span>);
+<span class="hljs-keyword">var</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-string">&#x27;s&#x27;</span>);
 <span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<span class="hljs-literal">true</span>);
 <span class="hljs-built_in">console</span>.log(o <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>); <span class="hljs-comment">// true</span>
 <span class="hljs-built_in">console</span>.log(n <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Number</span>); <span class="hljs-comment">// true</span>

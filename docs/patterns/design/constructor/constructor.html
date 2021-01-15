@@ -5,7 +5,7 @@
   <title>Constructor</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-  <link rel="stylesheet" media="all" href="docco.css" />
+  <link rel="stylesheet" media="all" href="../../../docco.css" />
 </head>
 <body>
   <div id="container">
@@ -16,43 +16,55 @@
           <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
           <a class="small" href="javascript:void(0);">+</a>
           <div id="jump_wrapper">
-          <div id="jump_page">
-            
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
               
-              <a class="source" href="constructor.html">
-                constructor.js
-              </a>
-            
+                
+                <a class="source" href="constructor.html">
+                  patterns/design/constructor/constructor.js
+                </a>
               
-              <a class="source" href="facade.html">
-                facade.js
-              </a>
-            
+                
+                <a class="source" href="../facade/facade.html">
+                  patterns/design/facade/facade.js
+                </a>
               
-              <a class="source" href="factory.html">
-                factory.js
-              </a>
-            
+                
+                <a class="source" href="../factory/factory.html">
+                  patterns/design/factory/factory.js
+                </a>
               
-              <a class="source" href="iterator.html">
-                iterator.js
-              </a>
-            
+                
+                <a class="source" href="../iterator/iterator.html">
+                  patterns/design/iterator/iterator.js
+                </a>
               
-              <a class="source" href="mediator.html">
-                mediator.js
-              </a>
-            
+                
+                <a class="source" href="../mediator/mediator.html">
+                  patterns/design/mediator/mediator.js
+                </a>
               
-              <a class="source" href="observer.html">
-                observer.js
-              </a>
-            
+                
+                <a class="source" href="../observer/observer.html">
+                  patterns/design/observer/observer.js
+                </a>
               
-              <a class="source" href="singleton.html">
-                singleton.js
-              </a>
-            
+                
+                <a class="source" href="../singleton/singleton.html">
+                  patterns/design/singleton/singleton.js
+                </a>
+              
+                
+                <a class="source" href="../../general/global-object/index.html">
+                  patterns/general/global-object/index.js
+                </a>
+              
+                
+                <a class="source" href="../../general/hoisting/index.html">
+                  patterns/general/hoisting/index.js
+                </a>
+              
+            </div>
           </div>
         </li>
       </ul>
@@ -71,7 +83,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'-----&gt; Constructor Patterns'</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;-----&gt; Constructor Patterns&#x27;</span>);</pre></div></div>
             
         </li>
         
@@ -116,7 +128,7 @@
               
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Car</span> <span class="hljs-params">(model, year)</span> </span>{</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Car</span> (<span class="hljs-params">model, year</span>) </span>{</pre></div></div>
             
         </li>
         
@@ -131,11 +143,11 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (!(<span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> Car)) {
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (!(<span class="hljs-built_in">this</span> <span class="hljs-keyword">instanceof</span> Car)) {
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Car(model, year);
     }
-    <span class="hljs-keyword">this</span>.model = model;
-    <span class="hljs-keyword">this</span>.year = year;
+    <span class="hljs-built_in">this</span>.model = model;
+    <span class="hljs-built_in">this</span>.year = year;
 }</pre></div></div>
             
         </li>
@@ -152,8 +164,8 @@ It’s important if performance is crucial.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>Car.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.model + <span class="hljs-string">' was produced in '</span> + <span class="hljs-keyword">this</span>.year;
+            <div class="content"><div class='highlight'><pre>Car.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.model + <span class="hljs-string">&#x27; was produced in &#x27;</span> + <span class="hljs-built_in">this</span>.year;
 };</pre></div></div>
             
         </li>
@@ -170,7 +182,7 @@ It’s important if performance is crucial.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">var</span> civic = <span class="hljs-keyword">new</span> Car(<span class="hljs-string">'Honda Civic'</span>, <span class="hljs-number">1972</span>);
+<span class="hljs-keyword">var</span> civic = <span class="hljs-keyword">new</span> Car(<span class="hljs-string">&#x27;Honda Civic&#x27;</span>, <span class="hljs-number">1972</span>);
 <span class="hljs-built_in">console</span>.log(civic.toString());</pre></div></div>
             
         </li>
@@ -190,7 +202,7 @@ It’s important if performance is crucial.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> camry = Car(<span class="hljs-string">'Toyota Camry'</span>, <span class="hljs-number">1982</span>);
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> camry = Car(<span class="hljs-string">&#x27;Toyota Camry&#x27;</span>, <span class="hljs-number">1982</span>);
 <span class="hljs-built_in">console</span>.log(camry.toString());</pre></div></div>
             
         </li>
@@ -218,7 +230,7 @@ It’s important if performance is crucial.</p>
               
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Plane</span> <span class="hljs-params">(model, year)</span> </span>{
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Plane</span> (<span class="hljs-params">model, year</span>) </span>{
     <span class="hljs-keyword">var</span> _model = model;
     <span class="hljs-keyword">var</span> _year = year;
 
@@ -237,8 +249,8 @@ It’s important if performance is crucial.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    that.toString = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">return</span> _model + <span class="hljs-string">' was produced in '</span> + _year;
+            <div class="content"><div class='highlight'><pre>    that.toString = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> _model + <span class="hljs-string">&#x27; was produced in &#x27;</span> + _year;
     };
 
     <span class="hljs-keyword">return</span> that;
@@ -270,7 +282,7 @@ It’s important if performance is crucial.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> boeing = Plane(<span class="hljs-string">'Boeing 747'</span>, <span class="hljs-number">1969</span>);
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> boeing = Plane(<span class="hljs-string">&#x27;Boeing 747&#x27;</span>, <span class="hljs-number">1969</span>);
 <span class="hljs-built_in">console</span>.log(boeing.toString());</pre></div></div>
             
         </li>

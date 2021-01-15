@@ -1,30 +1,12 @@
 {
-  "name": "do-i-know-js",
+  "name": "javascript-patterns",
   "version": "0.1.0",
-  "description": "Javascript patterns in examples",
+  "description": "JavaScript patterns in examples",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "docs-design": "docco patterns/design/**/*.js -c assets/docco.css -o docs/patterns/design"
+    "docs": "docco patterns/**/**/*.js -c assets/docco.css -o docs/patterns/"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/voronianski/Do-I-Know-JS.git"
-  },
-  "keywords": [
-    "js",
-    "design",
-    "patterns",
-    "general",
-    "examples",
-    "usage"
-  ],
-  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/voronianski/Do-I-Know-JS/issues"
-  },
-  "homepage": "https://github.com/voronianski/Do-I-Know-JS"
+  "devDependencies": {
+    "docco": "^0.8.0"
+  }
 }

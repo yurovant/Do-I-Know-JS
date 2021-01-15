@@ -5,7 +5,7 @@
   <title>Observer</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-  <link rel="stylesheet" media="all" href="docco.css" />
+  <link rel="stylesheet" media="all" href="../../../docco.css" />
 </head>
 <body>
   <div id="container">
@@ -16,43 +16,55 @@
           <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
           <a class="small" href="javascript:void(0);">+</a>
           <div id="jump_wrapper">
-          <div id="jump_page">
-            
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
               
-              <a class="source" href="constructor.html">
-                constructor.js
-              </a>
-            
+                
+                <a class="source" href="../constructor/constructor.html">
+                  patterns/design/constructor/constructor.js
+                </a>
               
-              <a class="source" href="facade.html">
-                facade.js
-              </a>
-            
+                
+                <a class="source" href="../facade/facade.html">
+                  patterns/design/facade/facade.js
+                </a>
               
-              <a class="source" href="factory.html">
-                factory.js
-              </a>
-            
+                
+                <a class="source" href="../factory/factory.html">
+                  patterns/design/factory/factory.js
+                </a>
               
-              <a class="source" href="iterator.html">
-                iterator.js
-              </a>
-            
+                
+                <a class="source" href="../iterator/iterator.html">
+                  patterns/design/iterator/iterator.js
+                </a>
               
-              <a class="source" href="mediator.html">
-                mediator.js
-              </a>
-            
+                
+                <a class="source" href="../mediator/mediator.html">
+                  patterns/design/mediator/mediator.js
+                </a>
               
-              <a class="source" href="observer.html">
-                observer.js
-              </a>
-            
+                
+                <a class="source" href="observer.html">
+                  patterns/design/observer/observer.js
+                </a>
               
-              <a class="source" href="singleton.html">
-                singleton.js
-              </a>
-            
+                
+                <a class="source" href="../singleton/singleton.html">
+                  patterns/design/singleton/singleton.js
+                </a>
+              
+                
+                <a class="source" href="../../general/global-object/index.html">
+                  patterns/general/global-object/index.js
+                </a>
+              
+                
+                <a class="source" href="../../general/hoisting/index.html">
+                  patterns/general/hoisting/index.js
+                </a>
+              
+            </div>
           </div>
         </li>
       </ul>
@@ -71,7 +83,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'-----&gt; Observer Patterns'</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;-----&gt; Observer Patterns&#x27;</span>);</pre></div></div>
             
         </li>
         
@@ -133,22 +145,22 @@ and automatically notifies them when any changes occur by broadcasting notificat
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Subject</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.observers = [];
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Subject</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">this</span>.observers = [];
 }
-Subject.prototype.addObserver = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(observer)</span> </span>{
-    <span class="hljs-keyword">this</span>.observers.push(observer);
+Subject.prototype.addObserver = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">observer</span>) </span>{
+    <span class="hljs-built_in">this</span>.observers.push(observer);
 };
-Subject.prototype.removeObserver = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(observer)</span> </span>{
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = <span class="hljs-keyword">this</span>.observers.length; i &lt; l; i++) {
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.observers[i] === observer) {
-            <span class="hljs-keyword">this</span>.observers.splice(i, <span class="hljs-number">1</span>);
+Subject.prototype.removeObserver = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">observer</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = <span class="hljs-built_in">this</span>.observers.length; i &lt; l; i++) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.observers[i] === observer) {
+            <span class="hljs-built_in">this</span>.observers.splice(i, <span class="hljs-number">1</span>);
         }
     }
 };
-Subject.prototype.notify = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = <span class="hljs-keyword">this</span>.observers.length; i &lt; l; i++) {
-        <span class="hljs-keyword">this</span>.observers[i].update.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+Subject.prototype.notify = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = <span class="hljs-built_in">this</span>.observers.length; i &lt; l; i++) {
+        <span class="hljs-built_in">this</span>.observers[i].update.apply(<span class="hljs-built_in">this</span>, <span class="hljs-built_in">arguments</span>);
     }
 };</pre></div></div>
             
@@ -165,9 +177,9 @@ Subject.prototype.notify = <span class="hljs-function"><span class="hljs-keyword
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Observer</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.update = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'default'</span>);
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Observer</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">this</span>.update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;default&#x27;</span>);
     };
 }</pre></div></div>
             
@@ -185,9 +197,9 @@ Subject.prototype.notify = <span class="hljs-function"><span class="hljs-keyword
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> newspaper = <span class="hljs-keyword">new</span> Subject();
-newspaper.newIssue = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">var</span> title = <span class="hljs-string">'BREAKING! Martians do it better!'</span>;
-    <span class="hljs-keyword">this</span>.notify(title);
+newspaper.newIssue = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> title = <span class="hljs-string">&#x27;BREAKING! Martians do it better!&#x27;</span>;
+    <span class="hljs-built_in">this</span>.notify(title);
 };</pre></div></div>
             
         </li>
@@ -204,12 +216,12 @@ newspaper.newIssue = <span class="hljs-function"><span class="hljs-keyword">func
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> jack = <span class="hljs-keyword">new</span> Observer();
-jack.update = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(what)</span> </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'I just read "'</span> + what + <span class="hljs-string">'".'</span>);
+jack.update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">what</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;I just read &quot;&#x27;</span> + what + <span class="hljs-string">&#x27;&quot;.&#x27;</span>);
 };
 <span class="hljs-keyword">var</span> jill = <span class="hljs-keyword">new</span> Observer();
-jill.update = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(what)</span> </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Do you heard that "'</span> + what + <span class="hljs-string">'"?'</span>);
+jill.update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">what</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Do you heard that &quot;&#x27;</span> + what + <span class="hljs-string">&#x27;&quot;?&#x27;</span>);
 };</pre></div></div>
             
         </li>
@@ -276,10 +288,10 @@ newspaper.addObserver(jill);</pre></div></div>
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> pubsub = {
-    topics: {},
+    <span class="hljs-attr">topics</span>: {},
 
-    publish: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(topic, args)</span> </span>{
-        <span class="hljs-keyword">var</span> subscribers = <span class="hljs-keyword">this</span>.topics[topic];
+    <span class="hljs-attr">publish</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">topic, args</span>) </span>{
+        <span class="hljs-keyword">var</span> subscribers = <span class="hljs-built_in">this</span>.topics[topic];
         <span class="hljs-keyword">if</span> (!subscribers) {
             <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
         }
@@ -291,19 +303,19 @@ newspaper.addObserver(jill);</pre></div></div>
         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     },
 
-    subscribe: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(topic, fn)</span> </span>{
-        <span class="hljs-keyword">var</span> subscribers = <span class="hljs-keyword">this</span>.topics[topic];
+    <span class="hljs-attr">subscribe</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">topic, fn</span>) </span>{
+        <span class="hljs-keyword">var</span> subscribers = <span class="hljs-built_in">this</span>.topics[topic];
         <span class="hljs-keyword">if</span> (!subscribers) {
-            subscribers = <span class="hljs-keyword">this</span>.topics[topic] = [];
+            subscribers = <span class="hljs-built_in">this</span>.topics[topic] = [];
         }
         subscribers.push(fn);
 
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
     },
 
-    unsubscribe: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(topic, fn)</span> </span>{
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> t <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.topics) {
-            <span class="hljs-keyword">var</span> subscribers = <span class="hljs-keyword">this</span>.topics[t];
+    <span class="hljs-attr">unsubscribe</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">topic, fn</span>) </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> t <span class="hljs-keyword">in</span> <span class="hljs-built_in">this</span>.topics) {
+            <span class="hljs-keyword">var</span> subscribers = <span class="hljs-built_in">this</span>.topics[t];
             <span class="hljs-keyword">if</span> (subscribers) {
                 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = subscribers.length; i &lt; l; i++) {
                     <span class="hljs-keyword">if</span> (subscribers[i] === fn) {
@@ -332,14 +344,14 @@ newspaper.addObserver(jill);</pre></div></div>
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> logger = {
-    handler: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Received new message "%s" from %s'</span>, data.text, data.from);
+    <span class="hljs-attr">handler</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Received new message &quot;%s&quot; from %s&#x27;</span>, data.text, data.from);
     },
-    init: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-        pubsub.subscribe(<span class="hljs-string">'message'</span>, <span class="hljs-keyword">this</span>.handler);
+    <span class="hljs-attr">init</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        pubsub.subscribe(<span class="hljs-string">&#x27;message&#x27;</span>, <span class="hljs-built_in">this</span>.handler);
     },
-    close: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-        pubsub.unsubscribe(<span class="hljs-string">'message'</span>, <span class="hljs-keyword">this</span>.handler);
+    <span class="hljs-attr">close</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        pubsub.unsubscribe(<span class="hljs-string">&#x27;message&#x27;</span>, <span class="hljs-built_in">this</span>.handler);
     }
 };</pre></div></div>
             
@@ -357,8 +369,8 @@ newspaper.addObserver(jill);</pre></div></div>
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> gmail = {
-    message: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-        pubsub.publish(<span class="hljs-string">'message'</span>, {from: <span class="hljs-string">'hello@gmail.com'</span>, text: <span class="hljs-string">'How are you?'</span>});
+    <span class="hljs-attr">message</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        pubsub.publish(<span class="hljs-string">&#x27;message&#x27;</span>, {<span class="hljs-attr">from</span>: <span class="hljs-string">&#x27;hello@gmail.com&#x27;</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&#x27;How are you?&#x27;</span>});
     }
 };
 
