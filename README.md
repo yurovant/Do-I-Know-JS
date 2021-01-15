@@ -5,7 +5,7 @@
 
 ## Contents
 - [Usage](#usage)
-- [Patterns]
+- Patterns
     - [General Patterns]()
         - [Hoisting]()
         - [Access Global]()
