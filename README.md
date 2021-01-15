@@ -4,10 +4,9 @@
 
 
 ## Contents
-
 - [Usage](#usage)
-- [Patterns](#patterns)
-    - [General Patterns](#general)
+- [Patterns]
+    - [General Patterns]()
         - [Hoisting]()
         - [Access Global]()
     - [Design Patterns]()
@@ -24,16 +23,8 @@
             - [Iterator]()
             - [Mediator]()
             - [Observer]()
-- [APIs](#apis)
-- [References](#references)
 
 
 ## Usage
 
-Just open `index.html` in your favorite browser and observe dev tools console.
-
-Before usage in the browser don't forget to run inside repo:
-
-```bash
-bower install
-```
+Just open `index.html` in your favorite browser and observe developer tools console.
