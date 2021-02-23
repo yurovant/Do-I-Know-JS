@@ -6,23 +6,23 @@
 ## Contents
 - [Usage](#usage)
 - Patterns
-    - [General Patterns]()
-        - [Hoisting]()
-        - [Access Global]()
-    - [Design Patterns]()
-        - [Structural]()
-            - [Decorator]()
-            - [Facade]()
-            - [Proxy]()
-        - [Creational]()
-            - [Constructor]()
-            - [Factory]()
-            - [Singleton]()
-        - [Behavioral]()
-            - [Command]()
-            - [Iterator]()
-            - [Mediator]()
-            - [Observer]()
+    - General Patterns
+        - Hoisting
+        - Access Global
+    - Design Patterns
+        - Structural
+            - Decorator
+            - Facade
+            - Proxy
+        - Creational
+            - Constructor
+            - Factory
+            - Singleton
+        - Behavioral
+            - Command
+            - Iterator
+            - Mediator
+            - Observer
 
 
 ## Usage
